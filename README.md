@@ -1,4 +1,5 @@
 # Kalkulator Sederhana Assembly - x86_64 & ARM32/ARM64
+![banner](archanaberry/calculator.png)
 
 Kalkulator ini dibuat menggunakan bahasa C dan instruksi assembly untuk operasi aritmatika dasar. Program mendukung arsitektur **x86_64** dan **ARM32/ARM64** dengan menggunakan assembly untuk operasi yang lebih cepat dan ringan.
 
@@ -108,6 +109,9 @@ File `calculator-arm3264.asm` berisi kode assembly yang digunakan untuk operasi 
 - **Pembagian** (`SDIV`)
 
 File ini memungkinkan kalkulator untuk bekerja dengan arsitektur ARM, dengan instruksi assembly yang disesuaikan untuk ARM32 dan ARM64.
+
+## Tangkapan Layar
+![screenshot](archanaberry/screenshot.png)
 
 ## Potongan kode operasi aritmatika di i386, dan x86_64 (32bit dan 64bit)
 ```
