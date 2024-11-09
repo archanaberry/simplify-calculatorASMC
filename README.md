@@ -107,20 +107,3 @@ Jika Anda ingin berkontribusi dalam pengembangan kalkulator ini, silakan lakukan
 ## Lisensi
 
 Proyek ini dilisensikan di bawah **MIT License** - lihat [LICENSE](LICENSE) untuk detail lebih lanjut.
-```
-
-### Penjelasan Konten `README.md`:
-
-1. **Deskripsi Proyek**: Menyediakan informasi umum tentang kalkulator yang menggunakan instruksi assembly untuk operasi aritmatika.
-   
-2. **Cara Penggunaan**: Memberikan penjelasan tentang bagaimana menjalankan kalkulator dan menggunakan operator yang tersedia. Contoh penggunaan ditampilkan agar pengguna dapat langsung mencoba program.
-
-3. **Bantuan**: Menyediakan informasi untuk pengguna yang ingin mengetahui cara penggunaan kalkulator lebih lanjut dengan `--help`.
-
-4. **Cara Kompilasi**: Memberikan instruksi tentang bagaimana mengompilasi program untuk **x86_64** menggunakan GCC. Untuk ARM32/ARM64, instruksi umum disediakan untuk referensi lebih lanjut.
-
-5. **Penjelasan File Assembly**: Menjelaskan tujuan dan fungsi masing-masing file assembly (`calculator-x8664.asm` dan `calculator-arm3264.asm`) serta instruksi yang digunakan pada masing-masing arsitektur.
-
-6. **Kontribusi**: Mendorong kontribusi dari pengguna untuk mengembangkan proyek ini lebih lanjut.
-
-7. **Lisensi**: Memberikan informasi mengenai lisensi yang digunakan untuk proyek ini (MIT License).
