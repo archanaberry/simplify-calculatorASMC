@@ -14,6 +14,28 @@ Program menggunakan instruksi assembly untuk meningkatkan kinerja kalkulasi.
 
 ## Cara Menggunakan
 
+## Cara Kompilasi
+
+### Untuk x86_64
+1. Kompilasi dengan GCC:
+2. contoh kompilasi agar efisien dan lebih cepat pakai opsi flag -O3 (optimalisasi level 3)
+3. ```
+   gcc <file program kalkulator.c nya> -o <penamaan program contoh "kalkulator"> <opsi optimalisasi>
+   ```
+   seperti ini kalau untuk prosesor x86_64 (32bit dan 64bit) misal Intel dan AMD
+   ```
+   gcc calculator-x8664.c -o calculator -O3
+   ```
+   atau kalau untuk prosesor ARM dari 32bit dan 64bit misal Snapdragon, Mediatek, dan Unisoc, dll
+	 ```
+   gcc calculator-arm3264.c -o calculator -03
+   ```
+   Setelah berhasil dikompilasi, Anda dapat menjalankan program dengan:
+   ```
+   ./calculator <input> <operator> <input> ...
+   ```
+4. Jika salah pemilihan versi arsitektur tidak dapat membuat aplikasi nya karena tidak cocok dengan set instruksi di prosesor anda!!!
+
 ### Menjalankan Kalkulator
 Untuk menjalankan kalkulator, gunakan sintaks berikut di terminal:
 ```
@@ -62,19 +84,6 @@ Contoh:
   ./calculator 1 - 1 + 20 x 2
 ```
 
-## Cara Kompilasi
-
-### Untuk x86_64
-1. Kompilasi dengan GCC:
-   ```
-   gcc cal2.c -o calculator -O3
-   ```
-
-2. Setelah berhasil dikompilasi, Anda dapat menjalankan program dengan:
-   ```
-   ./calculator <input> <operator> <input> ...
-   ```
-
 ### Untuk ARM32/ARM64
 Jika Anda ingin menggunakan arsitektur ARM32 atau ARM64, Anda dapat memodifikasi file sumber untuk menyesuaikan instruksi assembly dengan masing-masing arsitektur, dan mengikuti langkah kompilasi yang sesuai dengan sistem Anda.
 
@@ -106,4 +115,4 @@ Jika Anda ingin berkontribusi dalam pengembangan kalkulator ini, silakan lakukan
 
 ## Lisensi
 
-Proyek ini dilisensikan di bawah **MIT License** - lihat [LICENSE](LICENSE) untuk detail lebih lanjut.
+Proyek ini dilisensikan di bawah **Creative Common License** - lihat [LICENSE](LICENSE) untuk detail lebih lanjut.
