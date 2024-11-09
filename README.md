@@ -1,4 +1,4 @@
-# Kalkulator Sederhana Assembly - x86_64 & ARM32/ARM64
+# Kalkulator Sederhana Assembly + C - x86_64 & ARM32/ARM64
 ![banner](archanaberry/calculator.png)
 
 Kalkulator ini dibuat menggunakan bahasa C dan instruksi assembly untuk operasi aritmatika dasar. Program mendukung arsitektur **x86_64** dan **ARM32/ARM64** dengan menggunakan assembly untuk operasi yang lebih cepat dan ringan.
