@@ -21,8 +21,7 @@ void show_help() {
 long calculate(long num1, char op, long num2) {
     long result;
 
-    // Pastikan kode hanya dijalankan pada arsitektur x86_64
-    #if defined(__x86_64__)
+    #if defined(__x86_64__) // Untuk arsitektur x86_64 atau AMD64
         switch(op) {
             case '+':
                 __asm__ (
@@ -51,7 +50,7 @@ long calculate(long num1, char op, long num2) {
                     exit(1);
                 }
                 __asm__ (
-                    "cqto;"               // Convert to quadword for division
+                    "cqto;"               // Convert to quadword untuk pembagian
                     "idivq %2;"           // result = num1 / num2
                     : "=a" (result)
                     : "d" (num1), "r" (num2)
@@ -61,8 +60,47 @@ long calculate(long num1, char op, long num2) {
                 printf("Operator tidak dikenal!\n");
                 exit(1);
         }
+    #elif defined(__i386__) // Untuk arsitektur x86 (32-bit)
+        switch(op) {
+            case '+':
+                __asm__ (
+                    "addl %1, %0;"        // result = num1 + num2
+                    : "=r" (result)
+                    : "r" (num2), "0" (num1)
+                );
+                break;
+            case '-':
+                __asm__ (
+                    "subl %1, %0;"        // result = num1 - num2
+                    : "=r" (result)
+                    : "r" (num2), "0" (num1)
+                );
+                break;
+            case 'x': // Perkalian
+                __asm__ (
+                    "imull %1, %0;"       // result = num1 * num2
+                    : "=r" (result)
+                    : "r" (num2), "0" (num1)
+                );
+                break;
+            case '/': // Pembagian
+                if (num2 == 0) {
+                    printf("Error: Pembagian dengan nol tidak diperbolehkan!\n");
+                    exit(1);
+                }
+                __asm__ (
+                    "cltd;"               // Convert to doubleword untuk pembagian
+                    "idivl %2;"           // result = num1 / num2
+                    : "=a" (result)
+                    : "d" (num1), "r" (num2)
+                );
+                break;
+            default:
+                printf("Operator tidak dikenal!\n");
+                exit(1);
+        }
     #else
-        printf("Arsitektur ini tidak didukung. Pastikan Anda menggunakan x86_64.\n");
+        printf("Arsitektur tidak didukung! Hanya mendukung x86 dan x86_64.\n");
         exit(1);
     #endif
 
